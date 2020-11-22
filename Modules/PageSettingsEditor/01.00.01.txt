@@ -1,0 +1,2 @@
+﻿DesktopModules/MVC/Upendo.Modules.PageSettingsEditor/Views/Settings/Settings.cshtml
+DesktopModules/MVC/Upendo.Modules.PageSettingsEditor/Views/Settings/

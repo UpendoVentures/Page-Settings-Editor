@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("PageSettingsEditor Modules Extension for DNN")]
 [assembly: AssemblyDescription("This is a DNN module that allows you to create, edit, and delete custom settings for pages in your DNN website.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Upendo")]
+[assembly: AssemblyCompany("Upendo Ventures, LLC")]
 [assembly: AssemblyProduct("PageSettingsEditor Modules Extension for DNN")]
-[assembly: AssemblyCopyright("Copyright 2020 Upendo")]
+[assembly: AssemblyCopyright("Upendo Ventures, LLC")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("01.00.00")]
-[assembly: AssemblyFileVersion("01.00.00")]
+[assembly: AssemblyVersion("01.00.01")]
+[assembly: AssemblyFileVersion("01.00.01")]

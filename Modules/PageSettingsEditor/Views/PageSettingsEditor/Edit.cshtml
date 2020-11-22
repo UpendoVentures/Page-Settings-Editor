@@ -16,7 +16,7 @@
                 <p>@Dnn.LocalizeString("ValidationWarning")</p>
                 <div class="row">
                     <div class="col-auto">
-                        @Html.TextBoxFor(m => Model.Key, new { @class = "form-control", maxlength = "50", required = "required" })
+                        @Html.TextBoxFor(m => Model.Key, new { @class = "form-control", maxlength = "50", @readonly = "readonly" })
                     </div>
                     <div class="col-auto">
                         @Html.TextAreaFor(m => Model.Value, new { @class = "form-control" })

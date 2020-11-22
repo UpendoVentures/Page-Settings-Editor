@@ -5,6 +5,13 @@
 <div class="uv-install-wrapper">
 	<h2>PageSettingsEditor Modules Extension for DNN</h2>
 	<p><b>WARNING:</b> This module assumes you're using a Bootstrap 4 theme.</p>
+	<p>Version 01.00.01</p>
+	<ul>
+		<li>Resolves a one-time exception that occurs when adding the module to the page for the first time.</li>
+		<li>Added additional logging for easier troubleshooting.</li>
+		<li>Made setting names (keys) read-only.</li>
+		<li>Removed unecessary orphaned view file.</li>
+	</ul>
 	<p>Version 01.00.00</p>
 	<ul>
 		<li>Initial release</li>

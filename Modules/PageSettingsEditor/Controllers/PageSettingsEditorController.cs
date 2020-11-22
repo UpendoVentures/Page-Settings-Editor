@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+using System;
 using DotNetNuke.Framework.JavaScriptLibraries;
 using DotNetNuke.Web.Mvc.Framework.ActionFilters;
 using DotNetNuke.Web.Mvc.Framework.Controllers;
@@ -31,6 +32,7 @@ using System.Linq;
 using System.Web.Mvc;
 using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Tabs;
+using DotNetNuke.Instrumentation;
 using DotNetNuke.Security;
 using Upendo.Modules.PageSettingsEditor.Models;
 
@@ -39,6 +41,8 @@ namespace Upendo.Modules.PageSettingsEditor.Controllers
     [DnnHandleError]
     public class PageSettingsEditorController : DnnController
     {
+        private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(PageSettingsEditorController));
+
         private IEnumerable<SettingNvp> SortedPageSettings
         {
             get
@@ -56,34 +60,61 @@ namespace Upendo.Modules.PageSettingsEditor.Controllers
 
         public ActionResult Delete(string key)
         {
-            TabController.Instance.DeleteTabSetting(this.ActivePage.TabID, key);
+            try
+            {
+                TabController.Instance.DeleteTabSetting(this.ActivePage.TabID, key);
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                throw;
+            }
+
             return RedirectToDefaultRoute();
         }
 
         public ActionResult Index()
         {
-            DotNetNuke.Framework.JavaScriptLibraries.JavaScript.RequestRegistration(CommonJs.DnnPlugins);
+            try
+            {
+                var model = new PageSettingsInfo {PageSettings = SortedPageSettings, NewSetting = new SettingNvp()};
 
-            var model = new PageSettingsInfo { PageSettings = SortedPageSettings, NewSetting = new SettingNvp() };
-
-            return View(model);
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                throw;
+            }
         }
 
         [HttpPost]
         [DotNetNuke.Web.Mvc.Framework.ActionFilters.ValidateAntiForgeryToken]
         public ActionResult Index(PageSettingsInfo model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                if (!string.IsNullOrEmpty(model.NewSetting.Key) && !string.IsNullOrEmpty(model.NewSetting.Value))
+                if (ModelState.IsValid)
                 {
-                    var newKey =
-                        PortalSecurity.Instance.InputFilter(model.NewSetting.Key.Trim(), PortalSecurity.FilterFlag.NoMarkup);
-                    var newValue =
-                        PortalSecurity.Instance.InputFilter(model.NewSetting.Value.Trim(), PortalSecurity.FilterFlag.NoMarkup);
+                    // the first two checks in the IF statement below are necessary for when the module is first added to a page
+                    if (model != null && model.NewSetting != null && !string.IsNullOrEmpty(model.NewSetting.Key) &&
+                        !string.IsNullOrEmpty(model.NewSetting.Value))
+                    {
+                        var newKey =
+                            PortalSecurity.Instance.InputFilter(model.NewSetting.Key.Trim(),
+                                PortalSecurity.FilterFlag.NoMarkup);
+                        var newValue =
+                            PortalSecurity.Instance.InputFilter(model.NewSetting.Value.Trim(),
+                                PortalSecurity.FilterFlag.NoMarkup);
 
-                    TabController.Instance.UpdateTabSetting(ActivePage.TabID, newKey, newValue);
+                        TabController.Instance.UpdateTabSetting(ActivePage.TabID, newKey, newValue);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                throw;
             }
 
             return RedirectToDefaultRoute();
@@ -93,13 +124,22 @@ namespace Upendo.Modules.PageSettingsEditor.Controllers
         {
             var settings = SortedPageSettings;
             var model = new SettingNvp();
-            foreach (var setting in settings)
+
+            try
             {
-                if (setting.Key == key)
+                foreach (var setting in settings)
                 {
-                    model.Key = setting.Key;
-                    model.Value = setting.Value;
+                    if (setting.Key == key)
+                    {
+                        model.Key = setting.Key;
+                        model.Value = setting.Value;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                throw;
             }
 
             return View(model);
@@ -109,21 +149,41 @@ namespace Upendo.Modules.PageSettingsEditor.Controllers
         [DotNetNuke.Web.Mvc.Framework.ActionFilters.ValidateAntiForgeryToken]
         public ActionResult Edit(SettingNvp model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                // TODO: Add a check to prevent a duplicate key
-                if (!string.IsNullOrEmpty(model.Key))
+                if (ModelState.IsValid)
                 {
-                    var newKey =
-                        PortalSecurity.Instance.InputFilter(model.Key.Trim(), PortalSecurity.FilterFlag.NoMarkup);
-                    var newValue =
-                        PortalSecurity.Instance.InputFilter(model.Value.Trim(), PortalSecurity.FilterFlag.NoMarkup);
+                    // TODO: Add a check to prevent a duplicate key
+                    if (!string.IsNullOrEmpty(model.Key))
+                    {
+                        var newKey =
+                            PortalSecurity.Instance.InputFilter(model.Key.Trim(), PortalSecurity.FilterFlag.NoMarkup);
+                        var newValue =
+                            PortalSecurity.Instance.InputFilter(model.Value.Trim(), PortalSecurity.FilterFlag.NoMarkup);
 
-                    TabController.Instance.UpdateTabSetting(ActivePage.TabID, newKey, newValue);
+                        TabController.Instance.UpdateTabSetting(ActivePage.TabID, newKey, newValue);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                throw;
             }
 
             return RedirectToDefaultRoute();
+        }
+
+        private void LogError(Exception ex)
+        {
+            if (ex != null)
+            {
+                Logger.Error(ex.Message, ex);
+                if (ex.InnerException != null)
+                {
+                    LogError(ex.InnerException);
+                }
+            }
         }
     }
 }

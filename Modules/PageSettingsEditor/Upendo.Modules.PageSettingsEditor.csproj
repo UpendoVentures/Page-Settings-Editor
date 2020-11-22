@@ -99,6 +99,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="01.00.01.txt" />
     <Content Include="App_LocalResources\PageSettingsEditor.resx">
       <SubType>Designer</SubType>
     </Content>
@@ -132,7 +133,6 @@
   <ItemGroup>
     <Content Include="NuGet.config" />
     <None Include="packages.config" />
-    <Content Include="Views\Settings\Settings.cshtml" />
     <Content Include="Views\PageSettingsEditor\Edit.cshtml" />
   </ItemGroup>
   <PropertyGroup>

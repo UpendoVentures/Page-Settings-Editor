@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dotnetnuke type="Package" version="6.0">
   <packages>
-    <package name="Upendo.Modules.PageSettingsEditor" type="Module" version="01.00.00">
+    <package name="Upendo.Modules.PageSettingsEditor" type="Module" version="01.00.01">
       <friendlyName>Page Settings Editor Module</friendlyName>
       <description>
         <![CDATA[<p>This is a DNN module that allows you to create, edit, and delete custom settings for pages in your DNN website.</p>]]>
@@ -9,7 +9,7 @@
       <iconFile>DesktopModules/MVC/Upendo.Modules.PageSettingsEditor/Images/logo.png</iconFile>
       <owner>
         <name>Will Strohl</name>
-        <organization>Upendo</organization>
+        <organization>Upendo Ventures, LLC</organization>
         <url><![CDATA[<a href="https://upendoventures.com" target="_blank">https://upendoventures.com</a>]]></url>
         <email><![CDATA[<a href="mailto:solutions@upendoventures.com" target="_blank">solutions@upendoventures.com</a>]]></email>
       </owner>
@@ -63,7 +63,7 @@
             <attributes>
               <businessControllerClass>Upendo.Modules.PageSettingsEditor.Components.FeatureController, Upendo.Modules.PageSettingsEditor</businessControllerClass>
               <desktopModuleID>[DESKTOPMODULEID]</desktopModuleID>
-              <upgradeVersionsList>01.00.00</upgradeVersionsList>
+              <upgradeVersionsList>01.00.01</upgradeVersionsList>
             </attributes>
           </eventMessage>
         </component>
@@ -73,7 +73,7 @@
             <assembly>
               <name>Upendo.Modules.PageSettingsEditor.dll</name>
               <path>bin</path>
-              <version>01.00.00</version>
+              <version>01.00.01</version>
             </assembly>
           </assemblies>
         </component>
@@ -86,6 +86,8 @@
             </resourceFile>
           </resourceFiles>
         </component>
+
+        <component type="Cleanup" version="01.00.01" fileName="01.00.01.txt" />
 
       </components>
     </package>
