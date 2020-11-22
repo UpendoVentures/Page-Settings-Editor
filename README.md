@@ -1,3 +1,9 @@
+# Page Settings Editor Module for DNN  
+
+For more information about [how to use this module](https://github.com/UpendoVentures/Page-Settings-Editor/wiki), please visit the project wiki.  
+
+This module is created and maintained by [Upendo Ventures](https://upendoventures.com) for the [DNN CMS Community](https://dnncommunity.org). Please consider [sponsoring us](https://github.com/sponsors/hismightiness) for this and the many other open-source efforts we do.  
+
 **A Special Note to ALL Developers...**  
 Please do not begin any development until you first read through and understand all of the notes in the README below.  
 
