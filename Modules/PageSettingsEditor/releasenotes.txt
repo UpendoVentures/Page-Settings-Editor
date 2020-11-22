@@ -10,7 +10,7 @@
 		<li>Resolves a one-time exception that occurs when adding the module to the page for the first time.</li>
 		<li>Added additional logging for easier troubleshooting.</li>
 		<li>Made setting names (keys) read-only.</li>
-		<li>Removed unecessary orphaned view file.</li>
+		<li>Removed an unnecessary orphaned view file.</li>
 	</ul>
 	<p>Version 01.00.00</p>
 	<ul>
