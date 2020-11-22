@@ -1,0 +1,64 @@
+@inherits DotNetNuke.Web.Mvc.Framework.DnnWebViewPage<Upendo.Modules.PageSettingsEditor.Models.PageSettingsInfo>
+
+@using System.Collections.Generic
+@using System.Text.RegularExpressions
+@using DotNetNuke.Web.Mvc.Helpers
+
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+    @Dnn.LocalizeString("Permissions")
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div id="PageSettings-@Dnn.ModuleContext.ModuleId" class="container" role="form">
+    <h4>@Dnn.LocalizeString("Settings")</h4>
+    <div class="row">
+        <div class="col-sm-12">
+            @if ((Dnn.User != null && Dnn.User.UserID > 0) && Model == null || !Model.PageSettings.Any())
+            {
+                <p>@Dnn.LocalizeString("NoSettings")</p>
+            }
+            else
+            {
+                <p>@Dnn.LocalizeString("ValidationWarning")</p>
+
+                foreach (var setting in Model.PageSettings)
+                {
+                    <div class="row">
+                        <div class="col-auto">
+                            @Html.TextBoxFor(m => setting.Key, new { @class = "form-control readonly", @readonly = " readonly", maxlength = "50" })
+                        </div>
+                        <div class="col-auto">
+                            @Html.TextBoxFor(m => setting.Value, new { @class = "form-control readonly",  @readonly = " readonly" })
+                        </div>
+                        <div class="col-auto">
+                            <a class="btn btn-primary mb-2" href="@Url.Action("Edit", "PageSettingsEditor", new {key = setting.Key})">@Dnn.LocalizeString("EditSetting")</a>
+                            <a class="btn btn-danger mb-2" href="@Url.Action("Delete", "PageSettingsEditor", new {key = setting.Key})">@Dnn.LocalizeString("DeleteSetting")</a>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    
+    @if (Dnn.User != null && Dnn.User.UserID > 0)
+    {
+        <hr />
+        <h5>@Dnn.LocalizeString("AddSetting")</h5>
+        <div class="row">
+            <div class="col-auto">
+                @Html.TextBoxFor(m => Model.NewSetting.Key, new {@class = "form-control", maxlength = "50", placeholder = Dnn.LocalizeString("SettingKey"), required = "required" })
+                <div class="invalid-tooltip">
+                    @Dnn.LocalizeString("KeyRequired")
+                </div>
+            </div>
+            <div class="col-auto">
+                @Html.TextBoxFor(m => Model.NewSetting.Value, new {@class = "form-control", placeholder = Dnn.LocalizeString("SettingValue")})
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-2">@Dnn.LocalizeString("Submit")</button>
+            </div>
+        </div>
+    }
+</div>

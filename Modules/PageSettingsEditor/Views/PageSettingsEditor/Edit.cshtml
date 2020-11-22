@@ -1,0 +1,34 @@
+@inherits DotNetNuke.Web.Mvc.Framework.DnnWebViewPage<Upendo.Modules.PageSettingsEditor.Models.SettingNvp>
+
+@using System.Collections.Generic
+@using DotNetNuke.Web.Mvc.Helpers
+
+<div id="PageSettings-@Dnn.ModuleContext.ModuleId" class="container" role="form">
+    <h4>@Dnn.LocalizeString("Settings")</h4>
+    <div class="row">
+        <div class="col-sm-12">
+            @if (Model == null)
+            {
+                <p>@Dnn.LocalizeString("NoSettings")</p>
+            }
+            else
+            {
+                <p>@Dnn.LocalizeString("ValidationWarning")</p>
+                <div class="row">
+                    <div class="col-auto">
+                        @Html.TextBoxFor(m => Model.Key, new { @class = "form-control", maxlength = "50", required = "required" })
+                    </div>
+                    <div class="col-auto">
+                        @Html.TextAreaFor(m => Model.Value, new { @class = "form-control" })
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button type="submit" class="btn btn-primary mb-2">@Dnn.LocalizeString("Submit")</button>
+            <a id="cancelEdit" href="@Url.Action("Index", "PageSettingsEditor")" class="btn btn-secondary mb-2">@Dnn.LocalizeString("Cancel")</a>
+        </div>
+    </div>
+</div>

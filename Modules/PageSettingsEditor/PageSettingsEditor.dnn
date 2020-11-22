@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dotnetnuke type="Package" version="6.0">
+  <packages>
+    <package name="Upendo.Modules.PageSettingsEditor" type="Module" version="01.00.00">
+      <friendlyName>Page Settings Editor Module</friendlyName>
+      <description>
+        <![CDATA[<p>This is a DNN module that allows you to create, edit, and delete custom settings for pages in your DNN website.</p>]]>
+      </description>
+      <iconFile>DesktopModules/MVC/Upendo.Modules.PageSettingsEditor/Images/logo.png</iconFile>
+      <owner>
+        <name>Will Strohl</name>
+        <organization>Upendo</organization>
+        <url><![CDATA[<a href="https://upendoventures.com" target="_blank">https://upendoventures.com</a>]]></url>
+        <email><![CDATA[<a href="mailto:solutions@upendoventures.com" target="_blank">solutions@upendoventures.com</a>]]></email>
+      </owner>
+      <license src="License.txt" />
+      <releaseNotes src="ReleaseNotes.txt" />
+      <azureCompatible>true</azureCompatible>
+      <dependencies>
+        <dependency type="coreversion">09.03.02</dependency>
+      </dependencies>
+      <components>
+
+        <component type="Module">
+          <desktopModule>
+            <moduleName>PageSettingsEditor Module</moduleName>
+            <foldername>Upendo.Modules.PageSettingsEditor</foldername>
+            <businessControllerClass>Upendo.Modules.PageSettingsEditor.Components.FeatureController, Upendo.Modules.PageSettingsEditor</businessControllerClass>
+            <supportedFeatures />
+            <moduleDefinitions>
+              <moduleDefinition>
+                <friendlyName>PageSettingsEditor Module</friendlyName>
+                <defaultCacheTime>0</defaultCacheTime>
+                <moduleControls>
+                  <moduleControl>
+                    <controlKey />
+                    <controlSrc>Upendo.Modules.PageSettingsEditor.Controllers/PageSettingsEditor/Index.mvc</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle />
+                    <controlType>View</controlType>
+                    <iconFile />
+                    <helpUrl />
+                    <viewOrder>0</viewOrder>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>Edit</controlKey>
+                    <controlSrc>Upendo.Modules.PageSettingsEditor.Controllers/PageSettingsEditor/Edit.mvc</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle>Edit Page Setting</controlTitle>
+                    <controlType>Edit</controlType>
+                    <iconFile />
+                    <helpUrl />
+                    <viewOrder>0</viewOrder>
+                    <supportsPopUps>True</supportsPopUps>
+                  </moduleControl>
+                </moduleControls>
+              </moduleDefinition>
+            </moduleDefinitions>
+          </desktopModule>
+          <eventMessage>
+            <processorType>DotNetNuke.Entities.Modules.EventMessageProcessor, DotNetNuke</processorType>
+            <processorCommand>UpgradeModule</processorCommand>
+            <attributes>
+              <businessControllerClass>Upendo.Modules.PageSettingsEditor.Components.FeatureController, Upendo.Modules.PageSettingsEditor</businessControllerClass>
+              <desktopModuleID>[DESKTOPMODULEID]</desktopModuleID>
+              <upgradeVersionsList>01.00.00</upgradeVersionsList>
+            </attributes>
+          </eventMessage>
+        </component>
+
+        <component type="Assembly">
+          <assemblies>
+            <assembly>
+              <name>Upendo.Modules.PageSettingsEditor.dll</name>
+              <path>bin</path>
+              <version>01.00.00</version>
+            </assembly>
+          </assemblies>
+        </component>
+
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>DesktopModules/MVC/Upendo.Modules.PageSettingsEditor</basePath>
+            <resourceFile>
+              <name>Resources.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>
