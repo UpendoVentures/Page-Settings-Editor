@@ -29,15 +29,20 @@ using DotNetNuke.Web.Mvc.Framework.Controllers;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web.Mvc;
 using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Tabs;
 using DotNetNuke.Instrumentation;
 using DotNetNuke.Security;
+using DotNetNuke.Services.Exceptions;
 using Upendo.Modules.PageSettingsEditor.Models;
 
 namespace Upendo.Modules.PageSettingsEditor.Controllers
 {
+    /// <summary>
+    /// PageSettingsEditorController class
+    /// </summary>
     [DnnHandleError]
     public class PageSettingsEditorController : DnnController
     {
@@ -58,6 +63,11 @@ namespace Upendo.Modules.PageSettingsEditor.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public ActionResult Delete(string key)
         {
             try
@@ -73,6 +83,10 @@ namespace Upendo.Modules.PageSettingsEditor.Controllers
             return RedirectToDefaultRoute();
         }
 
+        /// <summary>
+        /// Index
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             try
@@ -88,6 +102,11 @@ namespace Upendo.Modules.PageSettingsEditor.Controllers
             }
         }
 
+        /// <summary>
+        /// Index
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         [DotNetNuke.Web.Mvc.Framework.ActionFilters.ValidateAntiForgeryToken]
         public ActionResult Index(PageSettingsInfo model)
@@ -100,12 +119,8 @@ namespace Upendo.Modules.PageSettingsEditor.Controllers
                     if (model != null && model.NewSetting != null && !string.IsNullOrEmpty(model.NewSetting.Key) &&
                         !string.IsNullOrEmpty(model.NewSetting.Value))
                     {
-                        var newKey =
-                            PortalSecurity.Instance.InputFilter(model.NewSetting.Key.Trim(),
-                                PortalSecurity.FilterFlag.NoMarkup);
-                        var newValue =
-                            PortalSecurity.Instance.InputFilter(model.NewSetting.Value.Trim(),
-                                PortalSecurity.FilterFlag.NoMarkup);
+                        var newKey = WebUtility.HtmlEncode(model.NewSetting.Key.Trim());
+                        var newValue = WebUtility.HtmlEncode(model.NewSetting.Value.Trim());
 
                         TabController.Instance.UpdateTabSetting(ActivePage.TabID, newKey, newValue);
                     }
@@ -120,6 +135,11 @@ namespace Upendo.Modules.PageSettingsEditor.Controllers
             return RedirectToDefaultRoute();
         }
 
+        /// <summary>
+        /// Edit
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public ActionResult Edit(string key)
         {
             var settings = SortedPageSettings;
@@ -145,6 +165,11 @@ namespace Upendo.Modules.PageSettingsEditor.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Edit
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         [DotNetNuke.Web.Mvc.Framework.ActionFilters.ValidateAntiForgeryToken]
         public ActionResult Edit(SettingNvp model)
@@ -156,10 +181,8 @@ namespace Upendo.Modules.PageSettingsEditor.Controllers
                     // TODO: Add a check to prevent a duplicate key
                     if (!string.IsNullOrEmpty(model.Key))
                     {
-                        var newKey =
-                            PortalSecurity.Instance.InputFilter(model.Key.Trim(), PortalSecurity.FilterFlag.NoMarkup);
-                        var newValue =
-                            PortalSecurity.Instance.InputFilter(model.Value.Trim(), PortalSecurity.FilterFlag.NoMarkup);
+                        var newKey = WebUtility.HtmlEncode(model.Key.Trim());
+                        var newValue = WebUtility.HtmlEncode(model.Value.Trim());
 
                         TabController.Instance.UpdateTabSetting(ActivePage.TabID, newKey, newValue);
                     }
@@ -179,6 +202,15 @@ namespace Upendo.Modules.PageSettingsEditor.Controllers
             if (ex != null)
             {
                 Logger.Error(ex.Message, ex);
+                try
+                {
+                    Exceptions.LogException(ex);
+                }
+                catch 
+                {
+                    // do nothing
+                }
+
                 if (ex.InnerException != null)
                 {
                     LogError(ex.InnerException);

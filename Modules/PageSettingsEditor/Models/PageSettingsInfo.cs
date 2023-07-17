@@ -27,16 +27,28 @@ using System.Collections.Generic;
 
 namespace Upendo.Modules.PageSettingsEditor.Models
 {
+    /// <summary>
+    /// PageSettingsInfo class
+    /// </summary>
     [Serializable]
     public class PageSettingsInfo : IPageSettingseInfo
     {
+        /// <summary>
+        /// PageSettingsInfo
+        /// </summary>
         public PageSettingsInfo()
         {
             PageSettings = null;
             NewSetting = null;
         }
 
+        /// <summary>
+        /// PageSettings
+        /// </summary>
         public IEnumerable<SettingNvp> PageSettings { get; set; }
+        /// <summary>
+        /// NewSetting
+        /// </summary>
         public SettingNvp NewSetting { get; set; }
     }
 }

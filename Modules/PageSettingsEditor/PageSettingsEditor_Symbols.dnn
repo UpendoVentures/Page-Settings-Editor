@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dotnetnuke type="Package" version="6.0">
   <packages>
-    <package name="Upendo.Modules.PageSettingsEditor_Symbols" type="Library" version="01.00.01">
+    <package name="Upendo.Modules.PageSettingsEditor_Symbols" type="Library" version="01.01.00">
       <friendlyName>PageSettingsEditor Module Symbols</friendlyName>
       <description><![CDATA[This is a DNN module that allows you to create, edit, and delete custom settings for pages in your DNN website.]]></description>
       <owner>
@@ -14,7 +14,7 @@
       <releaseNotes src="ReleaseNotes.txt" />
       <azureCompatible>True</azureCompatible>
       <dependencies>
-        <dependency type="managedPackage" version="1.0.1">Upendo.Modules.PageSettingsEditor</dependency>
+        <dependency type="managedPackage" version="1.1.0">Upendo.Modules.PageSettingsEditor</dependency>
       </dependencies>
       <components>
         <component type="ResourceFile">

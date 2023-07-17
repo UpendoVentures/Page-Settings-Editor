@@ -26,21 +26,38 @@ using System;
 
 namespace Upendo.Modules.PageSettingsEditor.Models
 {
+    /// <summary>
+    /// SettingNvp class
+    /// </summary>
     [Serializable]
     public class SettingNvp: ISettingNvp
     {
+        /// <summary>
+        /// SettingNvp
+        /// </summary>
         public SettingNvp()
         {
             // do nothing
         }
 
+        /// <summary>
+        /// SettingNvp
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
         public SettingNvp(string key, string value)
         {
             Key = key;
             Value = value;
         }
 
+        /// <summary>
+        /// Key
+        /// </summary>
         public string Key { get; set; }
+        /// <summary>
+        /// Value
+        /// </summary>
         public string Value { get; set; }
     }
 }

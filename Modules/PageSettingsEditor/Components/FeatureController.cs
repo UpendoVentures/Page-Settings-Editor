@@ -28,6 +28,9 @@ using DotNetNuke.Services.Search;
 
 namespace Upendo.Modules.PageSettingsEditor.Components
 {
+    /// <summary>
+    /// PageSettingsEditorController class
+    /// </summary>
     public class PageSettingsEditorController 
     {
 
