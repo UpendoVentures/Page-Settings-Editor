@@ -24,9 +24,18 @@ SOFTWARE.
 
 namespace Upendo.Modules.PageSettingsEditor.Models
 {
+    /// <summary>
+    /// ISettingNvp interface
+    /// </summary>
     public interface ISettingNvp
     {
+        /// <summary>
+        /// Key
+        /// </summary>
         string Key { get; set; }
+        /// <summary>
+        /// Value
+        /// </summary>
         string Value { get; set; }
     }
 }

@@ -26,9 +26,18 @@ using System.Collections.Generic;
 
 namespace Upendo.Modules.PageSettingsEditor.Models
 {
+    /// <summary>
+    /// IPageSettingseInfo interface
+    /// </summary>
     public interface IPageSettingseInfo
     {
+        /// <summary>
+        /// PageSettings
+        /// </summary>
         IEnumerable<SettingNvp> PageSettings { get; set; }
+        /// <summary>
+        /// NewSetting
+        /// </summary>
         SettingNvp NewSetting { get; set; }
     }
 }
