@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dotnetnuke type="Package" version="6.0">
   <packages>
-    <package name="Upendo.Modules.PageSettingsEditor" type="Module" version="01.01.00">
+    <package name="Upendo.Modules.PageSettingsEditor" type="Module" version="01.02.00">
       <friendlyName>Page Settings Editor Module</friendlyName>
       <description>
         <![CDATA[<p>This is a DNN module that allows you to create, edit, and delete custom settings for pages in your DNN website.</p>]]>
@@ -17,7 +17,7 @@
       <releaseNotes src="ReleaseNotes.txt" />
       <azureCompatible>true</azureCompatible>
       <dependencies>
-        <dependency type="coreversion">09.09.00</dependency>
+        <dependency type="coreversion">09.11.00</dependency>
       </dependencies>
       <components>
 
@@ -63,7 +63,7 @@
             <attributes>
               <businessControllerClass>Upendo.Modules.PageSettingsEditor.Components.FeatureController, Upendo.Modules.PageSettingsEditor</businessControllerClass>
               <desktopModuleID>[DESKTOPMODULEID]</desktopModuleID>
-              <upgradeVersionsList>01.00.01,01.01.00</upgradeVersionsList>
+              <upgradeVersionsList>01.00.01,01.01.00,01.02.00</upgradeVersionsList>
             </attributes>
           </eventMessage>
         </component>
@@ -73,7 +73,7 @@
             <assembly>
               <name>Upendo.Modules.PageSettingsEditor.dll</name>
               <path>bin</path>
-              <version>01.01.00</version>
+              <version>01.02.00</version>
             </assembly>
           </assemblies>
         </component>
