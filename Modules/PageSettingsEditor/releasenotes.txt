@@ -7,26 +7,27 @@
 	<h2>PageSettingsEditor Modules Extension for DNN</h2>
 	<hr />
 
-	<p class="muy-importante"><b>WARNING:</b> This module assumes you're using a Bootstrap 4 theme.</p>
+	<p class="muy-importante"><b>WARNING:</b> This module assumes you're using a Bootstrap 4+ theme.</p>
 
 	<div class="dnnClear">
 		<p class="muy-importante">The release notes continue after the Sponsors and Contributors below.</p>
 	
 		<h3>Sponsors</h3>
-		<p>Open-source is not free. We're so GRATEFUL for the following people/organizations for <a href="https://github.com/sponsors/hismightiness" target="_blank">sponsoring developers</a> to work on this release!</p>
-		<p>Sponsorship is <em>Powered by GitHub Sponsors</em> and ensures that this project lives and thrives. <a href="https://github.com/sponsors/hismightiness" target="_blank">Please consider contributing</a> any amount.</p>
+		<p>Open-source is not free. We're so GRATEFUL for the following people/organizations for <a href="https://github.com/sponsors/UpendoVentures" target="_blank">sponsoring developers</a> to work on this release!</p>
+		<p>Sponsorship is <em>Powered by GitHub Sponsors</em> and ensures that this project lives and thrives. <a href="https://github.com/sponsors/UpendoVentures" target="_blank">Please consider contributing</a> any amount.</p>
 		<p>THANK YOU to the following rockstars!</p>
 		<ul>
-			<li>David Poindexter, <a href="https://nvisionative.com/" target="_blank">nvisionative</a></li>
-			<li>Dan Rice, <a href="https://www.puresystems.co.uk/" target="_blank">Pure Systems</a></li>
-			<li>Matt Rutledge, <a href="https://beleivekids.com/" target="_blank">Believe Kids</a></li>
 			<li>Adam Bernstein, <a href="https://practicewise.com/" target="_blank">PracticeWise</a></li>
+			<li>Jeremy Farrance, <a href="https://accuraty.com/" target="_blank">Accuraty</a></li>
+			<li><a href="http://www.rammware.net/" target="_blank">John Ramminger</a></li>
+			<li><em>2 private sponsors</em></li>
 		</ul>
 	
 		<h3>Contributors</h3>
 		<p>THANK YOU to the following community members for participating in this release!</p>
 		<ul>
 			<li>Will Strohl, <a href="https://upendoventures.com/How/People/Will-Strohl" target="_blank">Upendo Ventures</a></li>
+			<li>Ismael Artola, <a href="https://upendoventures.com/What/CMS/DNN/Extensions" target="_blank">Upendo Ventures</a></li>
 		</ul>
 	
 		<h3><strong>Release Note Prefixes</strong></h3>
@@ -43,6 +44,7 @@
 		</ul>
 		<h4>Maintenence &amp Bug Fixes</h4>
 		<ul>
+			<li>Unable to add the module to the page in DNN 9.9+ (<a href="https://github.com/UpendoVentures/Upendo-Dnn-PageManager/issues/2" target="_blank">Issue 2</a>, thanks <a href="https://github.com/ismaelTartola" target="_blank">@ismaelTartola</a>!)</li>
 			<li>Updated local build dependencies, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
 		</ul>
 
