@@ -4,7 +4,7 @@
 	.muy-importante { color:red;font-weight:bold; }
 </style>
 <div class="uv-install-wrapper">
-	<h2>PageSettingsEditor Modules Extension for DNN</h2>
+	<h1>PageSettingsEditor Modules Extension for DNN</h1>
 	<hr />
 
 	<p class="muy-importante"><b>WARNING:</b> This module assumes you're using a Bootstrap 4+ theme.</p>
@@ -12,70 +12,79 @@
 	<div class="dnnClear">
 		<p class="muy-importante">The release notes continue after the Sponsors and Contributors below.</p>
 	
-		<h3>Sponsors</h3>
+		<h2>Sponsors</h2>
 		<p>Open-source is not free. We're so GRATEFUL for the following people/organizations for <a href="https://github.com/sponsors/UpendoVentures" target="_blank">sponsoring developers</a> to work on this release!</p>
 		<p>Sponsorship is <em>Powered by GitHub Sponsors</em> and ensures that this project lives and thrives. <a href="https://github.com/sponsors/UpendoVentures" target="_blank">Please consider contributing</a> any amount.</p>
 		<p>THANK YOU to the following rockstars!</p>
 		<ul>
 			<li>Adam Bernstein, <a href="https://practicewise.com/" target="_blank">PracticeWise</a></li>
-			<li>Jeremy Farrance, <a href="https://accuraty.com/" target="_blank">Accuraty</a></li>
-			<li><a href="http://www.rammware.net/" target="_blank">John Ramminger</a></li>
+			<li><a href="http://github.com/puresystems" target="_blank">PureSystems</a></li>
 			<li><em>2 private sponsors</em></li>
 		</ul>
 	
-		<h3>Contributors</h3>
+		<h2>Contributors</h2>
 		<p>THANK YOU to the following community members for participating in this release!</p>
 		<ul>
 			<li>Will Strohl, <a href="https://upendoventures.com/How/People/Will-Strohl" target="_blank">Upendo Ventures</a></li>
 		</ul>
 	
-		<h3><strong>Release Note Prefixes</strong></h3>
+		<h2><strong>Release Note Prefixes</strong></h2>
 		<p>The following prefixes are defined as:</p>
 		<ul>
 			<li><strong>SI:</strong> Support Inquiry - This issue was reported by a <a href="https://upendoventures.com/Support" target="_blank">support customer</a> and, as such, was prioritized above all other tasks.</li>
 		</ul>
 
-		<h3>Version 01.02.00</h3>
-		<h4>Enhancements</h4>
+		<h2>Version 01.03.00</h2>
+		<h3>Enhancements</h3>
 		<ul>
-			<li>Update DNN Dependency to DNN 9.11.0 (<a href="https://github.com/UpendoVentures/Upendo-Dnn-PageManager/issues/72" target="_blank">Issue 72</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
-			<li>Update .NET Framework to 4.8 (<a href="https://github.com/UpendoVentures/Upendo-Dnn-PageManager/issues/72" target="_blank">Issue 72</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>Updated DNN Dependencies to DNN 10.2 (<a href="https://github.com/UpendoVentures/Page-Settings-Editor/issues/78" target="_blank">Issue 78</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
 		</ul>
-		<h4>Maintenence, Bug Fixes, and Technical Debt</h4>
+		<h3>Maintenence, Bug Fixes, and Technical Debt</h3>
 		<ul>
 			<li>None at this time.</li>
 		</ul>
 
-		<h3>Version 01.01.00</h3>
-		<h4>Enhancements</h4>
+		<h2>Version 01.02.00</h2>
+		<h3>Enhancements</h3>
 		<ul>
-			<li>Update DNN Dependency to DNN 9.9.0 (<a href="https://github.com/UpendoVentures/Upendo-Dnn-PageManager/issues/61" target="_blank">Issue 61</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>Update DNN Dependency to DNN 9.11.0 (<a href="https://github.com/UpendoVentures/Page-Settings-Editor/issues/72" target="_blank">Issue 72</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>Update .NET Framework to 4.8 (<a href="https://github.com/UpendoVentures/Upendo-Dnn-PageManager/issues/72" target="_blank">Issue 72</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li> 
 		</ul>
-		<h4>Maintenence, Bug Fixes, and Technical Debt</h4>
+		<h3>Maintenence, Bug Fixes, and Technical Debt</h3>
 		<ul>
-			<li>Unable to add the module to the page in DNN 9.9+ (<a href="https://github.com/UpendoVentures/Upendo-Dnn-PageManager/issues/2" target="_blank">Issue 2</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
-			<li>Updated Release Note Sponsors, (<a href="https://github.com/UpendoVentures/Upendo-Dnn-PageManager/issues/73" target="_blank">Issue 73</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>None at this time.</li>
 		</ul>
 
-		<h3>Version 01.00.01</h3>
-		<h4>Enhancements</h4>
+		<h2>Version 01.01.00</h2>
+		<h3>Enhancements</h3>
+		<ul>
+			<li>Update DNN Dependency to DNN 9.9.0 (<a href="https://github.com/UpendoVentures/Page-Settings-Editor/issues/61" target="_blank">Issue 61</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+		</ul>
+		<h3>Maintenence, Bug Fixes, and Technical Debt</h3>
+		<ul>
+			<li>Unable to add the module to the page in DNN 9.9+ (<a href="https://github.com/UpendoVentures/Page-Settings-Editor/issues/2" target="_blank">Issue 2</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>Updated Release Note Sponsors, (<a href="https://github.com/UpendoVentures/Page-Settings-Editor/issues/73" target="_blank">Issue 73</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+		</ul>
+
+		<h2>Version 01.00.01</h2>
+		<h3>Enhancements</h3>
 		<ul>
 			<li>Added additional logging for easier troubleshooting.</li>
 			<li>Made setting names (keys) read-only.</li>
 		</ul>
-		<h4>Maintenence &amp Bug Fixes</h4>
+		<h3>Maintenence &amp Bug Fixes</h3>
 		<ul>
 			<li>Resolves a one-time exception that occurs when adding the module to the page for the first time.</li>
 			<li>Removed an unnecessary orphaned view file.</li>
 		</ul>
 
-		<h3>Version 01.00.00</h3>
-		<h4>Enhancements</h4>
+		<h2>Version 01.00.00</h2>
+		<h3>Enhancements</h3>
 		<ul>
 			<li>Initial release</li>
 			<li>Requires DNN 9.3.2 or newer</li>
 		</ul>
-		<h4>Maintenence &amp Bug Fixes</h4>
+		<h3>Maintenence &amp Bug Fixes</h3>
 		<ul>
 			<li>None at this time.</li>
 		</ul>
